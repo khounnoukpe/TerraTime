@@ -33,6 +33,12 @@ resource "aws_instance" "jjtechweb02" {
   tags = local.common_tags
 }
 
+resource "aws_instance" "jjtechweb06" {
+  ami = var. ami_id["us-east-1"]
+  instance_type = var. instance_type[2]
+  tags = local.common_tags
+}
+
   resource "aws_ebs_volume" "jjtechebs1" {
     availability_zone = "us-east-1a"
     size              = 40
